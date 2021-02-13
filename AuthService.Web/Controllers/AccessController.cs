@@ -7,27 +7,24 @@ using IAuthorizationService = AuthService.Common.Interfaces.Services.IAuthorizat
 
 namespace AuthService.Web.Controllers
 {
-    [Route("api/v1")]
+    [Route("api/v1/access")]
     [AllowAnonymous]
-    public class LoginController: BaseController
+    public class AccessController : BaseController
     {
         private readonly IAuthorizationService _authService;
 
-        public LoginController(ILogger<LoginController> logger, IAuthorizationService authService)
+        public AccessController(ILogger<AccessController> logger, IAuthorizationService authService)
             :base(logger)
         {
             _authService = authService;
         }
 
-        [HttpPost]
-        [Route("login")]
-        public async Task<BaseApiDataModel<TokenApiModel>> Login(LoginRequestModel loginModel)
+        [HttpGet]
+        public async Task<BaseApiDataModel<bool>> CheckAccess(string username, string action)
         {
             return await Execute(async () =>
             {
-                var token = await _authService.Login(loginModel.UserName, loginModel.Password);
-
-                return new TokenApiModel { Token = token.Token, ExpiredAt = token.ExpiredAt };
+                return await _authService.UserHasAccess(username, action);
             });
         }
     }
