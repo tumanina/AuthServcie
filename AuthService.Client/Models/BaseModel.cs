@@ -13,7 +13,7 @@ namespace AuthService.Client.Models
             }
         }
 
-        public List<string> Errors { get; set; }
+        public List<string> Errors { get; set; } = new List<string>();
     }
 
     public class BaseDataModel<T> : BaseModel

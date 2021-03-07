@@ -25,10 +25,10 @@ namespace AuthService.Common.Interfaces.Services
             {
                 using (var client = new HttpClient())
                 {
-                    var endpoint = $"{_url}/{method}".Replace("//", "/");
+                    client.BaseAddress = new Uri(_url);
                     HttpResponseMessage response = body != null
-                        ? await client.PostAsync(endpoint, new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json")) 
-                        : await client.GetAsync(endpoint);
+                        ? await client.PostAsync(method, new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json")) 
+                        : await client.GetAsync(method);
                     if (response.IsSuccessStatusCode)
                     {
                         var content = response.Content.ReadAsStringAsync().Result;
