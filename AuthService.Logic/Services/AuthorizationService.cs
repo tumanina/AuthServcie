@@ -5,12 +5,12 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AuthService.Logic.Authentification
+namespace AuthService.Logic.Services
 {
     public class AuthorizationService : IAuthorizationService
     {
         private readonly IAccountService _accountService;
-        private readonly IJwtTokenService _tokenService; 
+        private readonly IJwtTokenService _tokenService;
 
         public AuthorizationService(IAccountService accountService, IJwtTokenService tokenService)
         {

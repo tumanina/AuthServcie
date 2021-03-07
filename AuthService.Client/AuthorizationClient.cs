@@ -1,10 +1,9 @@
 ﻿using AuthService.Client.Interfaces;
 using AuthService.Client.Models;
-using Newtonsoft.Json;
-using System;
+using AuthService.Common.Interfaces.Services;
 using System.Threading.Tasks;
 
-namespace AuthService.Common.Interfaces.Services
+namespace AuthService.Client
 {
     public class AuthorizationClient : BaseClient, IAuthorizationClient
     {

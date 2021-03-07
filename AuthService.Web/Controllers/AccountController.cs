@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace AuthService.Web.Controllers
 {
-    [Route("api/v1/account")]
+    [Route("api/v1/accounts")]
     [AllowAnonymous]
     public class AccountController : BaseController
     {

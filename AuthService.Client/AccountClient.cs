@@ -1,10 +1,10 @@
 ﻿using AuthService.Client.Interfaces;
 using AuthService.Client.Models;
+using AuthService.Common.Interfaces.Services;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AuthService.Common.Interfaces.Services
+namespace AuthService.Client
 {
     public class AccountClient : BaseClient, IAccountClient
     {

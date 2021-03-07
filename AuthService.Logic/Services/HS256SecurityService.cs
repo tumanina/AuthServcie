@@ -8,7 +8,7 @@ using System.Text;
 using AuthService.Common.Settings;
 using AuthService.Common.Interfaces.Security;
 
-namespace AuthService.Logic.Authentification
+namespace AuthService.Logic.Services
 {
     public class Hs256SecurityService : ISecurityService
     {

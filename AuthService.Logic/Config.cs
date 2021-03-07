@@ -1,6 +1,5 @@
 ﻿using AuthService.Common.Interfaces.Security;
 using AuthService.Common.Interfaces.Services;
-using AuthService.Logic.Authentification;
 using AuthService.Logic.Services;
 using Microsoft.Extensions.DependencyInjection;
 
